@@ -78,11 +78,19 @@
           <div class="modal-body">     
             <div class="form-group">
               <label for="region">Choose your studying/teaching region</label>
-              <input name="Region" type="text" class="form-control" id="region" required>
+              <select name="Region" class="form-control" id="region" required>
+                <option value="" selected disabled>Please select</option>
+                <option value="Taipei">Taipei</option>
+                <option value="New Taipei">New Taipei</option>
+                <option value="Keelung">Keelung</option>
+                <option value="Tainan">Tainan</option>
+                <option value="Hsinchu">Hsinchu</option>
+                <option value="Chiayi">Chiayi</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="Subject">Choose Subject</label>
-              <select name="Subject" class="form-control" id="Subject">
+              <select name="Subject" class="form-control" id="Subject" required>
                 <option value="" selected disabled>Please select</option>
                 <option value="Chinese">Chinese</option>
                 <option value="English">English</option>
@@ -103,6 +111,10 @@
                 <option value="S">S</option>
                 <option value="T">T</option>
               </select>
+            </div>
+            <div class="form-group">
+              <label for="seniority">Enter you seniority</label>
+              <textarea name="Seniority" type="text" class="form-control" id="seniority" placeholder="Chinese: 1 year..." required></textarea>
             </div>
           </div>
           <div class="modal-footer">
