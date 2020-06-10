@@ -90,12 +90,12 @@
           </div>
           <div class="form-group">
             <label for="mail">E-mail</label>
-            <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" required>
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input name="Mail" type="email" class="form-control" id="mail" aria-describedby="emailHelp" required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input name="Password" type="password" class="form-control" id="password" required>
+            <small class="form-text text-muted">By using the Services, you signify your consent to this <a href="policy.html">Online Privacy Policy</a> and this site’s Terms of Use.</small>
           </div>
         </div>
         <div class="modal-footer">
