@@ -22,6 +22,7 @@ if ($result = $mysqli -> query($sql)) {
     $count += 1;
     $tmpsid = $row[0];
     $tmpsql = "SELECT UID FROM student_table WHERE SID='$tmpsid'";
+    $tmpsql = "SELECT Username FROM (select student_table.UID, school, Username, SID from student_table inner join member_table on student_table.UID = member_table.uid) as t where SID='$tmpsid'";
     $tmpres = $mysqli -> query($tmpsql);
     $tmpsuid = $tmpres -> fetch_row();
     $table1_text .= "<tr>";
@@ -41,6 +42,7 @@ if ($result = $mysqli -> query($sql)) {
     $count += 1;
     $tmpsid = $row[0];
     $tmpsql = "SELECT UID FROM student_table WHERE SID='$tmpsid'";
+    $tmpsql = "SELECT Username FROM (select student_table.UID, school, Username, SID from student_table inner join member_table on student_table.UID = member_table.uid) as t where SID='$tmpsid'";
     $tmpres = $mysqli -> query($tmpsql);
     $tmpsuid = $tmpres -> fetch_row();
     $table2_text .= "<tr>";
@@ -72,6 +74,7 @@ if ($result = $mysqli -> query($sql)) {
     $count += 1;
     $tmpsid = $row[1];
     $tmpsql = "SELECT UID FROM student_table WHERE SID='$tmpsid'";
+    $tmpsql = "SELECT Username FROM (select student_table.UID, school, Username, SID from student_table inner join member_table on student_table.UID = member_table.uid) as t where SID='$tmpsid'";
     $tmpres = $mysqli -> query($tmpsql);
     $tmpsuid = $tmpres -> fetch_row();
     $table3_text .= "<tr>";
@@ -79,7 +82,7 @@ if ($result = $mysqli -> query($sql)) {
     $table3_text .= "<td>$row[2]</td>";
     $table3_text .= "<td>$row[3]</td>";
     $table3_text .= "<td>$row[4]</td>";
-    $table3_text .= "<td>$row[5]</td>";
+    $table3_text .= "<td><pre class='text-color'>$row[5]<pre></td>";
     // $table3_text .= "<td><form action='tcheck.php' method='post'><input style='color:white' type='submit' name='chk' value=$row[1]></form></td>";
     $table3_text .= "<td><input class='checkbox chk' type='checkbox' name='chk' value=$row[1]><form action='tcheck.php' method='post'><input class='d-none' type='text' name='chk' value=$row[1]></form></td>";
     // $table3_text .= "<td><form action='Taccept.php' method='post'><input style='color:white' type='submit' name='acp' value=$row[0]></form></td>";

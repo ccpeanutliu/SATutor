@@ -34,6 +34,7 @@ if ($result = $mysqli -> query($sql)) {
     $count += 1;
     $tmptid = $row[1];
     $tmpsql = "SELECT UID FROM teacher_table WHERE TID='$tmptid'";
+    $tmpsql = "SELECT Username FROM (select teacher_table.UID, school, Username, SID from teacher_table inner join member_table on teacher_table.UID = member_table.uid) as t where SID='$tmpsid'";
     $tmpres = $mysqli -> query($tmpsql);
     $tmptuid = $tmpres -> fetch_row();
     $table3_text .= "<tr>";
@@ -41,7 +42,7 @@ if ($result = $mysqli -> query($sql)) {
     $table3_text .= "<td>$row[2]</td>";
     $table3_text .= "<td>$row[3]</td>";
     $table3_text .= "<td>$row[4]</td>";
-    $table3_text .= "<td>$row[5]</td>";
+    $table3_text .= "<td><pre class='text-color'>$row[5]<pre></td>";
     // $table3_text .= "<td><form action='Scheck.php' method='post'><input style='color:white' type='submit' name='chk' value=$row[1]></form></td>";
     $table3_text .= "<td><input class='checkbox chk' type='checkbox' name='chk' value=$row[1]><form action='Scheck.php' method='post'><input class='d-none' type='text' name='chk' value=$row[1]></form></td>";
     // $table3_text .= "<td><form action='Saccept.php' method='post'><input style='color:white' type='submit' name='acp' value=$row[0]></form></td>";
@@ -77,6 +78,7 @@ if ($result = $mysqli -> query($sql)){
     $count += 1;
     $tmptid = $row[1];
     $tmpsql = "SELECT UID FROM teacher_table WHERE TID='$tmptid'";
+    $tmpsql = "SELECT Username FROM (select teacher_table.UID, TID, Username from teacher_table inner join member_table on teacher_table.UID = member_table.uid) as t where TID='$tmpsid'";
     $tmpres = $mysqli -> query($tmpsql);
     $tmptuid = $tmpres -> fetch_row();
     $table2_text .= "<tr>";
@@ -90,7 +92,7 @@ if ($result = $mysqli -> query($sql)){
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
