@@ -34,7 +34,7 @@ if ($result = $mysqli -> query($sql)) {
     $count += 1;
     $tmptid = $row[1];
     $tmpsql = "SELECT UID FROM teacher_table WHERE TID='$tmptid'";
-    $tmpsql = "SELECT Username FROM (select teacher_table.UID, school, Username, SID from teacher_table inner join member_table on teacher_table.UID = member_table.uid) as t where SID='$tmpsid'";
+    $tmpsql = "SELECT Username FROM (select teacher_table.UID, Username, TID from teacher_table inner join member_table on teacher_table.UID = member_table.uid) as t where TID='$tmptid'";
     $tmpres = $mysqli -> query($tmpsql);
     $tmptuid = $tmpres -> fetch_row();
     $table3_text .= "<tr>";
@@ -78,7 +78,7 @@ if ($result = $mysqli -> query($sql)){
     $count += 1;
     $tmptid = $row[1];
     $tmpsql = "SELECT UID FROM teacher_table WHERE TID='$tmptid'";
-    $tmpsql = "SELECT Username FROM (select teacher_table.UID, TID, Username from teacher_table inner join member_table on teacher_table.UID = member_table.uid) as t where TID='$tmpsid'";
+    $tmpsql = "SELECT Username FROM (select teacher_table.UID, TID, Username from teacher_table inner join member_table on teacher_table.UID = member_table.uid) as t where TID='$tmptid'";
     $tmpres = $mysqli -> query($tmpsql);
     $tmptuid = $tmpres -> fetch_row();
     $table2_text .= "<tr>";

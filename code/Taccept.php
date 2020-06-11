@@ -17,8 +17,8 @@ $tmp = $row;
 $sql = "INSERT INTO case_table (SID, TID, Time, Region, Subject) values ('$sid','$tid','$tmp[2]','$tmp[0]','$tmp[1]')";
 $result2 = $mysqli->query($sql);
 
-$sql = "DELETE FROM S_case_table WHERE SCID='$acp'";
-$result3 = $mysqli->query($sql);
+// $sql = "DELETE FROM S_case_table WHERE SCID='$acp'";
+// $result3 = $mysqli->query($sql);
 $text = "";
 if($result0 && $result1 && $result2)
 {

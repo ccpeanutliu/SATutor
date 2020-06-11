@@ -1,7 +1,8 @@
 .jumbotron {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.2)),
+    linear-gradient(rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 1)),
     url("./giraffe.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -72,6 +73,10 @@ table {
   border-bottom: 2px solid rgba(222, 226, 230, 0.6);
 }
 
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
 .checkbox {
   width: 23px;
   height: 23px;
@@ -96,4 +101,13 @@ td {
 .search:hover {
   color: whitesmoke;
   text-decoration: none;
+}
+
+.search-input, .search-input:focus {
+  background: transparent;
+  color: whitesmoke;
+}
+
+.search-input::placeholder {
+  color: whitesmoke;
 }

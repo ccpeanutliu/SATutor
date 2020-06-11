@@ -95,7 +95,7 @@
           <div class="form-group">
             <label for="password">Password</label>
             <input name="Password" type="password" class="form-control" id="password" required>
-            <small class="form-text text-muted">By using the Services, you signify your consent to this <a href="policy.html">Online Privacy Policy</a> and this site’s Terms of Use.</small>
+            <small class="form-text text-muted">By using the Services, you signify your consent to this <a target="_blank" href="policy.html">Online Privacy Policy</a> and this site’s Terms of Use.</small>
           </div>
         </div>
         <div class="modal-footer">
